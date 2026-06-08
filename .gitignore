@@ -1,0 +1,21 @@
+# Source prototypes (not for deployment)
+landing_concept_a.html
+landing_concept_b.html
+landing_concept_b2.html
+landing_concept_c.html
+
+# Word documents
+*.docx
+
+# Temp/lock files
+~$*
+
+# Raw screenshots (og-preview.png used for OG meta)
+photo/
+
+# Build helper scripts
+build.py
+build.ps1
+
+# Dev tools
+.claude/launch.json
