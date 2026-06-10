@@ -1343,6 +1343,30 @@ _setupForm("final-form-wrap", "final-submit", "\u0424\u043E\u0440\u043C\u0430 CT
 
   els.forEach(function (el) { io.observe(el); });
 })();
+
+/* Масштабирование макета браузера в hero: ниже 890px колонки
+   дашборд уменьшается целиком вместо ломки внутренней вёрстки */
+(function () {
+  var right = document.querySelector(".hero-right");
+  var browser = document.querySelector(".browser");
+  if (!right || !browser || !("zoom" in browser.style)) return;
+
+  var DESIGN = 890; // минимальная ширина, на которой вёрстка дашборда целая
+
+  function fit() {
+    var w = right.clientWidth;
+    if (w < DESIGN) {
+      browser.style.width = DESIGN + "px";
+      browser.style.zoom = w / DESIGN;
+    } else {
+      browser.style.width = "";
+      browser.style.zoom = "";
+    }
+  }
+
+  window.addEventListener("resize", fit);
+  fit();
+})();
 </script>
 </body>
 </html>
