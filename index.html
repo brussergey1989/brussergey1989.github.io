@@ -1351,26 +1351,21 @@ _setupForm("final-form-wrap", "final-submit", "\u0424\u043E\u0440\u043C\u0430 CT
   els.forEach(function (el) { io.observe(el); });
 })();
 
-/* Масштабирование макета браузера в hero — страховка для узких колонок.
-   До 700px вёрстка дашборда сжимается сама (допустимые переносы строк);
-   ниже 700px она ломается, поэтому дашборд уменьшается целиком. */
+/* Макет браузера в hero: рендерим в узкой раскладке (текст переносится,
+   карточка выше) и увеличиваем на 18% — дашборд выглядит крупным,
+   а не приплюснутым, на любой ширине колонки */
 (function () {
   var right = document.querySelector(".hero-right");
   var browser = document.querySelector(".browser");
   if (!right || !browser || !("zoom" in browser.style)) return;
 
-  var MIN_NATIVE = 700; // ниже этой ширины колонки включается масштабирование
-  var DESIGN = 890;     // ширина, на которой вёрстка дашборда целая
+  var SCALE = 1.18;
 
   function fit() {
     var w = right.clientWidth;
-    if (w < MIN_NATIVE) {
-      browser.style.width = DESIGN + "px";
-      browser.style.zoom = w / DESIGN;
-    } else {
-      browser.style.width = "";
-      browser.style.zoom = "";
-    }
+    if (!w) return;
+    browser.style.width = Math.round(w / SCALE) + "px";
+    browser.style.zoom = SCALE;
   }
 
   window.addEventListener("resize", fit);
