@@ -93,9 +93,10 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font
   overflow:hidden;
   gap:48px;
 }
-/* На широких экранах контент hero не растягивается, а центрируется
-   (838+922 = раскладка 1920px, дальше не растёт) */
-@media (min-width:1920px){
+/* Шире 1920px контент hero не растягивается, а центрируется
+   (838+922 = раскладка 1920px, дальше не растёт).
+   Ровно на 1920 и уже — оригинальная резиновая сетка. */
+@media (min-width:1921px){
   .hero{
     grid-template-columns:minmax(0,838px) minmax(0,922px);
     justify-content:center;
@@ -1351,26 +1352,6 @@ _setupForm("final-form-wrap", "final-submit", "\u0424\u043E\u0440\u043C\u0430 CT
   els.forEach(function (el) { io.observe(el); });
 })();
 
-/* Макет браузера в hero: рендерим в узкой раскладке (текст переносится,
-   карточка выше) и увеличиваем на 18% — дашборд выглядит крупным,
-   а не приплюснутым, на любой ширине колонки */
-(function () {
-  var right = document.querySelector(".hero-right");
-  var browser = document.querySelector(".browser");
-  if (!right || !browser || !("zoom" in browser.style)) return;
-
-  var SCALE = 1.18;
-
-  function fit() {
-    var w = right.clientWidth;
-    if (!w) return;
-    browser.style.width = Math.round(w / SCALE) + "px";
-    browser.style.zoom = SCALE;
-  }
-
-  window.addEventListener("resize", fit);
-  fit();
-})();
 </script>
 </body>
 </html>
