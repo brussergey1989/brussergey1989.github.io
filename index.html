@@ -86,13 +86,20 @@ body{font-family:var(--font);background:var(--bg);color:var(--text);-webkit-font
 .hero{
   min-height:100vh;
   display:grid;
-  grid-template-columns:minmax(0,838px) minmax(0,922px);
-  justify-content:center;
+  grid-template-columns:1fr 1.1fr;
   align-items:center;
   padding:80px 56px 60px;
   position:relative;
   overflow:hidden;
   gap:48px;
+}
+/* На широких экранах контент hero не растягивается, а центрируется
+   (838+922 = раскладка 1920px, дальше не растёт) */
+@media (min-width:1920px){
+  .hero{
+    grid-template-columns:minmax(0,838px) minmax(0,922px);
+    justify-content:center;
+  }
 }
 
 /* Фон */
@@ -371,7 +378,7 @@ html{scroll-behavior:smooth;}
     <div class="browser">
       <div class="bbar">
         <div class="bdots"><div class="bd bd1"></div><div class="bd bd2"></div><div class="bd bd3"></div></div>
-        <div class="burl">fitnes-direktor.ru</div>
+        <div class="burl">fit-dir.ru</div>
       </div>
 
       <div class="atop">
@@ -1344,18 +1351,20 @@ _setupForm("final-form-wrap", "final-submit", "\u0424\u043E\u0440\u043C\u0430 CT
   els.forEach(function (el) { io.observe(el); });
 })();
 
-/* Масштабирование макета браузера в hero: ниже 890px колонки
-   дашборд уменьшается целиком вместо ломки внутренней вёрстки */
+/* Масштабирование макета браузера в hero — страховка для узких колонок.
+   До 700px вёрстка дашборда сжимается сама (допустимые переносы строк);
+   ниже 700px она ломается, поэтому дашборд уменьшается целиком. */
 (function () {
   var right = document.querySelector(".hero-right");
   var browser = document.querySelector(".browser");
   if (!right || !browser || !("zoom" in browser.style)) return;
 
-  var DESIGN = 890; // минимальная ширина, на которой вёрстка дашборда целая
+  var MIN_NATIVE = 700; // ниже этой ширины колонки включается масштабирование
+  var DESIGN = 890;     // ширина, на которой вёрстка дашборда целая
 
   function fit() {
     var w = right.clientWidth;
-    if (w < DESIGN) {
+    if (w < MIN_NATIVE) {
       browser.style.width = DESIGN + "px";
       browser.style.zoom = w / DESIGN;
     } else {
