@@ -14,15 +14,22 @@
       background: #07080f;
       color: #e4e8f5;
       height: 100vh;
+      height: 100dvh; /* мобильные: реальная видимая высота с учётом панели браузера */
       overflow: hidden;
     }
 
     iframe {
       width: 100vw;
       height: 100vh;
+      height: 100dvh;
       border: none;
       display: block;
     }
+
+    /* Режим авторазмера: приложение сообщает свою высоту через postMessage,
+       iframe растягивается под контент, скроллит сама страница (нативно) */
+    body.autosize { overflow: auto; height: auto; }
+    body.autosize iframe { height: auto; }
 
     /* Экран загрузки */
     #loader {
@@ -146,6 +153,20 @@
       // Фолбэк — скрыть лоадер через 5 сек если событие не сработало
       setTimeout(() => loader.classList.add('hidden'), 5000);
     }
+
+    // ─── АВТОРАЗМЕР IFRAME ───────────────────────────────────────
+    // Приложение внутри iframe может сообщать свою высоту:
+    //   setInterval(function(){
+    //     window.top.postMessage({ fdHeight: document.documentElement.scrollHeight }, '*');
+    //   }, 600);
+    // Тогда iframe растягивается под контент и страница скроллится нативно.
+    window.addEventListener('message', (e) => {
+      const h = e.data && e.data.fdHeight;
+      if (typeof h === 'number' && h > 200 && h < 50000) {
+        document.body.classList.add('autosize');
+        iframe.style.height = h + 'px';
+      }
+    });
   </script>
 
 </body>
