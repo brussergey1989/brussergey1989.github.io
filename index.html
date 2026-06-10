@@ -351,6 +351,11 @@ html{scroll-behavior:smooth;}
   /* Цены: рамка между ценой и описанием — снизу, а не справа */
   #pricing div[style*="border-right"]{border-right:none!important;border-bottom:1px solid var(--border)!important;}
 
+  /* «Как работает», строка внизу: пункты колонкой, точки-разделители прячем */
+  #how div[style*="flex-wrap"]{flex-direction:column;align-items:center;gap:12px;}
+  #how div[style*="flex-wrap"] > div[style*="width:4px"],
+  #how div[style*="flex-wrap"] > div[style*="width: 4px"]{display:none;}
+
   /* «Две реальности»: шапку колонок прячем, карточки подписываем.
      Структура: #reality > div(обёртка) > [заголовок, шапка колонок, пары] */
   #reality > div > div:nth-child(2){display:none!important;}
