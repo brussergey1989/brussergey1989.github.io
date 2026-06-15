@@ -183,7 +183,7 @@ h1 .grad{
   font-size:8px;color:var(--accent2);
 }
 
-/* RIGHT — BROWSER MOCKUP */
+/* RIGHT — HERO IMAGE */
 .hero-right{
   position:relative;z-index:2;
   display:flex;align-items:center;justify-content:center;
@@ -195,6 +195,19 @@ h1 .grad{
   width:110%;height:110%;
   background:radial-gradient(ellipse,rgba(99,102,241,.07) 0%,transparent 65%);
   pointer-events:none;z-index:0;
+}
+.hero-photo{
+  position:relative;z-index:1;
+  display:block;
+  width:auto;
+  max-width:100%;
+  height:auto;
+  max-height:min(82vh,720px);
+  border-radius:18px;
+  box-shadow:
+    0 30px 80px rgba(0,0,0,.6),
+    0 12px 32px rgba(0,0,0,.4),
+    0 0 60px rgba(99,102,241,.08);
 }
 
 .browser{
@@ -420,169 +433,9 @@ html{scroll-behavior:smooth;}
     </div>
   </div>
 
-  <!-- RIGHT — BROWSER -->
+  <!-- RIGHT — HERO IMAGE -->
   <div class="hero-right">
-    <div class="browser">
-      <div class="bbar">
-        <div class="bdots"><div class="bd bd1"></div><div class="bd bd2"></div><div class="bd bd3"></div></div>
-        <div class="burl">fit-dir.ru</div>
-      </div>
-
-      <div class="atop">
-        <div class="alogo">ФИТНЕС<em>·ДИРЕКТОР</em></div>
-        <div class="atabs">
-          <div class="atab active"><span class="atab-dot"></span>ПЛАН-ФАКТ</div>
-          <div class="atab"><span class="atab-dot"></span>ВПТ</div>
-          <div class="atab"><span class="atab-dot"></span>УДЕРЖАНИЕ</div>
-          <div class="atab"><span class="atab-dot"></span>ЗАРПЛАТА</div>
-          <div class="atab"><span class="atab-dot"></span>СПРАВОЧНИК</div>
-        </div>
-        <div class="aright">
-          <span class="aper">Март 2026</span>
-          <button class="aupd">Обновить данные</button>
-        </div>
-      </div>
-
-      <div class="abody">
-        <!-- KPI -->
-        <div class="akpi-row">
-          <div class="akpi k1">
-            <div class="aklabel">Общий план</div>
-            <div class="akval v1">1 500 000 ₽</div>
-            <div class="aksub">ТЗ 75% · ГП 25%</div>
-          </div>
-          <div class="akpi k2">
-            <div class="aklabel">Выполнение</div>
-            <div class="akval v2">101.3%</div>
-            <div class="aksub">Факт: 1 519 368 ₽ ✓</div>
-          </div>
-          <div class="akpi k3">
-            <div class="aklabel">Реализация ПТ</div>
-            <div class="akval v3">1 221 479 ₽</div>
-            <div class="aksub">89.0% от продаж</div>
-          </div>
-          <div class="akpi k4">
-            <div class="aklabel">Период</div>
-            <div class="akval v4" style="font-size:11px">Март 2026</div>
-            <div class="aksub">01.03 — 31.03</div>
-          </div>
-        </div>
-
-        <!-- Таблица -->
-        <div class="asec">
-          <div class="asec-head">
-            <div class="asec-title"><div class="atag">ТЗ</div>Тренажёрный зал</div>
-            <span class="abadge">107% выполнение · 1 201 524 ₽</span>
-          </div>
-          <table class="atable">
-            <thead><tr>
-              <th>Тренер</th><th>Категория</th><th class="r">Вес</th>
-              <th class="r">План</th><th class="r">Продажи</th>
-              <th class="r">% Вып.</th><th class="r">Норма б.</th>
-              <th class="r">Факт б.</th><th class="r">% Реал.</th>
-              <th class="r">Реал. ₽</th>
-            </tr></thead>
-            <tbody>
-              <tr>
-                <td><span class="atrainer">Смирнов А.В.</span></td>
-                <td><span class="acat cm">Мастер-тренер</span></td>
-                <td class="r" style="color:var(--text3)">3</td>
-                <td class="r" style="color:var(--text3)">337 500</td>
-                <td class="r cg" style="font-weight:600">440 135</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">130%</span></div></td>
-                <td class="r" style="color:var(--text3)">120</td>
-                <td class="r" style="color:var(--text)">175.3</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">146%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">371 409</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Козлов С.И.</span></td>
-                <td><span class="acat cp">Персональный тренер</span></td>
-                <td class="r" style="color:var(--text3)">1.5</td>
-                <td class="r" style="color:var(--text3)">168 750</td>
-                <td class="r cg" style="font-weight:600">176 837</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">105%</span></div></td>
-                <td class="r" style="color:var(--text3)">100</td>
-                <td class="r" style="color:var(--text)">90.5</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:90%;background:#f59e0b"></div></div><span class="pv cy">90%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">122 231</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Новиков К.М.</span></td>
-                <td><span class="acat cp">Персональный тренер</span></td>
-                <td class="r" style="color:var(--text3)">1.5</td>
-                <td class="r" style="color:var(--text3)">168 750</td>
-                <td class="r cg" style="font-weight:600">176 373</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">105%</span></div></td>
-                <td class="r" style="color:var(--text3)">100</td>
-                <td class="r" style="color:var(--text)">114.8</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">115%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">159 313</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Морозов Д.Г.</span></td>
-                <td><span class="acat ci">Инструктор</span></td>
-                <td class="r" style="color:var(--text3)">1</td>
-                <td class="r" style="color:var(--text3)">112 500</td>
-                <td class="r cg" style="font-weight:600">143 262</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">127%</span></div></td>
-                <td class="r" style="color:var(--text3)">80</td>
-                <td class="r" style="color:var(--text)">82.8</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">104%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">111 896</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Волков А.С.</span></td>
-                <td><span class="acat ci">Инструктор</span></td>
-                <td class="r" style="color:var(--text3)">1</td>
-                <td class="r" style="color:var(--text3)">112 500</td>
-                <td class="r cg" style="font-weight:600">131 666</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">117%</span></div></td>
-                <td class="r" style="color:var(--text3)">80</td>
-                <td class="r" style="color:var(--text)">53.4</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:67%;background:#f59e0b"></div></div><span class="pv cy">67%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">68 063</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Лебедев К.С.</span></td>
-                <td><span class="acat cs">Стажер</span></td>
-                <td class="r" style="color:var(--text3)">0.5</td>
-                <td class="r" style="color:var(--text3)">56 250</td>
-                <td class="r cy" style="font-weight:600">50 650</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:90%;background:#f59e0b"></div></div><span class="pv cy">90%</span></div></td>
-                <td class="r" style="color:var(--text3)">—</td>
-                <td class="r" style="color:var(--text)">28.2</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:0%;background:#ef4444"></div></div><span class="pv cr">0%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">37 366</td>
-              </tr>
-              <tr>
-                <td><span class="atrainer">Попова Е.В.</span></td>
-                <td><span class="acat ci">Инструктор</span></td>
-                <td class="r" style="color:var(--text3)">1</td>
-                <td class="r" style="color:var(--text3)">112 500</td>
-                <td class="r cr" style="font-weight:600">31 570</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:28%;background:#ef4444"></div></div><span class="pv cr">28%</span></div></td>
-                <td class="r" style="color:var(--text3)">80</td>
-                <td class="r" style="color:var(--text)">40.8</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:51%;background:#ef4444"></div></div><span class="pv cr">51%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:600">70 076</td>
-              </tr>
-              <tr class="atot">
-                <td colspan="2" style="color:var(--text);font-weight:700">ИТОГО ПО ОТДЕЛУ</td>
-                <td class="r">10</td>
-                <td class="r">1 125 000</td>
-                <td class="r cg">1 201 524</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:100%;background:#22c55e"></div></div><span class="pv cg">107%</span></div></td>
-                <td class="r">640</td>
-                <td class="r">610.8</td>
-                <td><div class="prog"><div class="pt"><div class="pf" style="width:95%;background:#22c55e"></div></div><span class="pv cg">95%</span></div></td>
-                <td class="r" style="color:#2ab8a8;font-weight:700">974 020</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
+    <img src="img/hero.png" alt="Тренер с планшетом, на котором открыт интерфейс Фитнес-директора" class="hero-photo">
   </div>
 </section>
 
