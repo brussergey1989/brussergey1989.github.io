@@ -902,51 +902,226 @@ html{scroll-behavior:smooth;}
 <section id="compare" style="padding:100px 56px;background:var(--surface);position:relative;overflow:hidden;">
   <div style="max-width:1100px;margin:0 auto;">
 
-    <!-- Заголовок -->
-    <div style="text-align:center;margin-bottom:64px;">
+    <!-- Заголовок секции -->
+    <div style="text-align:center;margin-bottom:72px;">
       <div style="display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--accent2);margin-bottom:24px;">
         <span style="display:block;width:20px;height:1px;background:var(--accent2);"></span>
         Наглядно
         <span style="display:block;width:20px;height:1px;background:var(--accent2);"></span>
       </div>
-      <!-- Вопрос -->
-      <div style="display:inline-block;padding:12px 24px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:10px;font-size:18px;font-weight:600;color:var(--text2);margin-bottom:28px;font-style:italic;">
+      <h2 style="font-family:var(--font-head);font-size:clamp(28px,3.5vw,44px);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--text);margin-bottom:18px;">
+        На каждый вопрос управления — <span style="background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">отдельный раздел системы</span>
+      </h2>
+      <p style="font-size:16px;color:var(--text2);line-height:1.65;max-width:640px;margin:0 auto;">
+        Шесть модулей закрывают шесть задач, на которые в 1С уходят часы выгрузок и Excel-сводок. Покажем, как это выглядит.
+      </p>
+    </div>
+
+    <!-- ───── Модуль 1: ПЛАН-ФАКТ ───── -->
+    <div class="mod" style="margin-bottom:80px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 1</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">План-факт</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
+        «Как мы идём по плану — у каждого тренера и по отделу в целом?»
+      </div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            В 1С факт продаж и реализации хранится в разных отчётах. Чтобы понять процент выполнения по каждому тренеру и по отделу — нужно выгрузить продажи, выгрузить реализацию, свести их вручную с учётом весов ТЗ/ГП, и каждого тренера.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «План-факт» показывает это автоматически: план, факт продаж, процент выполнения с цветовой индикацией, норму и факт баллов, процент и сумму реализации детализировано, среднюю норму тренировок в день и их количество за период — всё по каждому тренеру и по отделу в целом, на одном экране.
+          </p>
+        </div>
+      </div>
+      <img src="img/module-plan.png" alt="План-факт: продажи, реализация и выполнение плана по каждому тренеру" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
+    </div>
+
+    <!-- ───── Модуль 2: ВПТ (со сравнением скриншотов) ───── -->
+    <div class="mod" style="margin-bottom:80px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 2</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">ВПТ и конверсия</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
         «Какова конверсия каждого тренера из ВПТ в пакет — и сколько бонусов им начислено?»
       </div>
-      <h2 style="font-family:var(--font-head);font-size:clamp(26px,3vw,40px);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--text);">
-        В 1С — пять отчётов и Excel.<br>
-        В Фитнес-директоре — <span style="background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">один экран.</span>
-      </h2>
-    </div>
-
-    <!-- Скриншот 1С -->
-    <div style="margin-bottom:40px;">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-        <div style="width:28px;height:28px;background:#ff0000;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
-        <div style="font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">1С Фитнес-клуб</div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            Отчёт по конверсии ВПТ — один из 35 отчётов, которые нужны фитнес-директору. Не разделяет конверсию по недавно активированным и общей базой клиентов, не считает выплаты и бонусы. Для полной картины — ещё несколько отчётов и ручная сводка в Excel.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «ВПТ» показывает всё сразу: новую базу, скорость отработки ВПТ, личную конверсию каждого тренера в пакет, выплаты и бонусы — на одном экране. Один экран вместо пяти отчётов.
+          </p>
+        </div>
       </div>
-      <img src="img/compare-1c.png" alt="Интерфейс 1С Фитнес-клуб — пять разных отчётов для одного вопроса" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5);display:block;border:1px solid rgba(255,255,255,.08);">
-      <p style="font-size:14px;color:var(--text3);line-height:1.65;margin-top:14px;max-width:700px;">
-        Отчёт по конверсии ВПТ в 1С — один из 35 отчётов которые нужны фитнес-директору. Не разделяет конверсию по недавно активированным и общей базой клиентов, не считает выплаты и бонусы. Для полной картины — ещё несколько отчётов и ручная сводка в Excel.
-      </p>
-    </div>
-
-    <!-- Разделитель -->
-    <div style="display:flex;align-items:center;gap:16px;margin-bottom:40px;">
-      <div style="flex:1;height:1px;background:var(--border);"></div>
-      <div style="padding:8px 20px;background:rgba(99,102,241,.08);border:1px solid rgba(99,102,241,.2);border-radius:100px;font-size:12px;font-weight:600;color:var(--accent2);white-space:nowrap;">тот же вопрос в Фитнес-директоре</div>
-      <div style="flex:1;height:1px;background:var(--border);"></div>
-    </div>
-
-    <!-- Скриншот Фитнес-директор -->
-    <div>
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
-        <div style="padding:4px 14px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:6px;font-family:var(--font-head);font-size:13px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+      <!-- Два скриншота side-by-side -->
+      <div class="mod-shots" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;">
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <div style="width:20px;height:20px;background:#ff0000;border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1px;">1С Фитнес-клуб</div>
+          </div>
+          <img src="img/compare-1c.png" alt="Конверсия ВПТ в 1С — отдельный отчёт без бонусов и выплат" style="width:100%;border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.45);display:block;border:1px solid rgba(255,255,255,.08);">
+        </div>
+        <div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+            <div style="padding:3px 10px;background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <img src="img/module-vpt.png" alt="ВПТ в Фитнес-директоре — конверсия, выплаты и бонусы на одном экране" style="width:100%;border-radius:10px;box-shadow:0 16px 48px rgba(0,0,0,.45),0 0 48px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
+        </div>
       </div>
-      <img src="img/compare-fd.png" alt="Интерфейс Фитнес-директора — один экран с полной аналитикой" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
-      <p style="font-size:14px;color:var(--text3);line-height:1.65;margin-top:14px;max-width:700px;">
-        Фитнес-директор показывает всё сразу — новая база, скорость отработки ВПТ, личная конверсия каждого тренера, выплаты и бонусы. Один экран вместо пяти отчётов.
-      </p>
+    </div>
+
+    <!-- ───── Модуль 3: УДЕРЖАНИЕ ───── -->
+    <div class="mod" style="margin-bottom:80px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 3</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">Удержание</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
+        «У кого из клиентов скоро закончится пакет и кого нужно закрыть на продление прямо сейчас?»
+      </div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            В 1С нет единого представления по удержанию — остатки тренировок, дату последнего визита и срок действия пакета нужно искать по каждому клиенту отдельно в разных отчётах.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «Удержание» показывает по каждому тренеру список его клиентов с остатками тренировок, датой и риском сгорания пакета, статусом активности, процентом удержания и LTV. Тренер оставляет комментарий о статусе продления прямо в системе — руководитель видит кто из клиентов в работе, а кто требует внимания.
+          </p>
+        </div>
+      </div>
+      <img src="img/module-retention.png" alt="Удержание клиентов: остатки тренировок, риск сгорания пакета, LTV и комментарии тренера" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
+    </div>
+
+    <!-- ───── Модуль 4: ЗАРПЛАТА ───── -->
+    <div class="mod" style="margin-bottom:80px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 4</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">Зарплата</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
+        «Сколько заработал каждый тренер в этом месяце и из чего складывается эта сумма?»
+      </div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            В 1С есть только сырые данные о продажах. Расчёт итоговой зарплаты с учётом ставок, категорий, бонусов за ВПТ, дежурства и групповые программы каждый раз делается вручную в Excel.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «Зарплата» рассчитывает итоговую выплату каждому тренеру автоматически, с полной детализацией по всем составляющим — тренер в любой момент видит сколько он заработал и из чего складывается эта сумма.
+          </p>
+        </div>
+      </div>
+      <img src="img/module-salary.png" alt="Зарплата: автоматический расчёт выплат с детализацией по продажам, реализации, бонусам и дежурствам" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
+    </div>
+
+    <!-- ───── Модуль 5: ДЕЖУРСТВА ───── -->
+    <div class="mod" style="margin-bottom:80px;">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 5</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">Дежурства</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
+        «Кто и когда дежурит в зале на этой неделе, и сколько часов набрал каждый тренер за месяц?»
+      </div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            В 1С модуля учёта дежурств тренажёрного зала нет вообще — это всегда отдельный график в Excel или на бумаге, который никак не связан с остальными показателями.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «Дежурства» показывает график на весь месяц с разбивкой по неделям, позволяет назначать тренеров на смены и автоматически считает количество часов и процент нагрузки каждого тренера.
+          </p>
+        </div>
+      </div>
+      <img src="img/module-schedule.png" alt="График дежурств: расписание на месяц с разбивкой по неделям и итогом часов" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
+    </div>
+
+    <!-- ───── Модуль 6: СПРАВОЧНИК ───── -->
+    <div class="mod">
+      <div style="display:flex;align-items:center;gap:14px;margin-bottom:22px;">
+        <div style="font-family:var(--font-head);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--text3);">Модуль 6</div>
+        <div style="height:1px;background:var(--border);flex:1;"></div>
+        <div style="font-family:var(--font-head);font-size:24px;font-weight:700;color:var(--text);letter-spacing:-.01em;">Справочник</div>
+      </div>
+      <div style="font-size:18px;font-weight:500;color:var(--text2);font-style:italic;line-height:1.45;margin-bottom:28px;max-width:780px;">
+        «Где настроить ставки, веса, категории и коэффициенты, по которым считается всё остальное?»
+      </div>
+      <div class="mod-cmp" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:36px;">
+        <div style="padding:22px;background:rgba(255,255,255,.025);border:1px solid var(--border);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="width:24px;height:24px;background:#ff0000;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;color:#fff;font-family:serif;flex-shrink:0;">1С</div>
+            <div style="font-family:var(--font-head);font-size:11px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:1.2px;">В 1С</div>
+          </div>
+          <p style="font-size:14px;color:var(--text2);line-height:1.7;">
+            В 1С хранятся базовые данные о сотрудниках, но нет инструментов для настройки логики расчётов — категорий, ставок, весов, форматов тренировок. Эти параметры каждый раз держатся в голове или в отдельном файле.
+          </p>
+        </div>
+        <div style="padding:22px;background:rgba(99,102,241,.05);border:1px solid rgba(99,102,241,.18);border-radius:12px;">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+            <div style="padding:4px 11px;background:rgba(99,102,241,.12);border:1px solid rgba(99,102,241,.25);border-radius:5px;font-family:var(--font-head);font-size:10px;font-weight:700;color:var(--accent2);letter-spacing:.5px;">ФИТНЕС·ДИРЕКТОР</div>
+          </div>
+          <p style="font-size:14px;color:var(--text);line-height:1.7;">
+            Раздел «Справочник» — это центр управления системой: здесь задаются категории и ставки тренеров, нормы по баллам, коэффициенты для разных форматов тренировок и веса для расчёта плана. Именно эти настройки определяют, как считаются все остальные разделы системы.
+          </p>
+        </div>
+      </div>
+      <img src="img/module-directory.png" alt="Справочник сотрудников: настройка ставок, категорий, норм и коэффициентов системы" style="width:100%;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 60px rgba(99,102,241,.08);display:block;border:1px solid rgba(99,102,241,.15);">
     </div>
 
   </div>
