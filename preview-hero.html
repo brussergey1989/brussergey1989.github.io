@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hero варианты</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07080f;--surface:#0d0f1a;--surface2:#13162a;
+  --text:#e4e8f5;--text2:#9aa0b8;--text3:#5a6080;
+  --accent:#6366f1;--accent2:#818cf8;
+  --border:#1a1d2e;--border2:#252840;
+  --font:'Inter',sans-serif;--font-head:'Manrope',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:var(--bg);color:var(--text);font-family:var(--font);}
+.label{
+  padding:32px 56px 18px;
+  font-family:var(--font-head);
+  font-size:13px;font-weight:700;color:var(--accent2);
+  text-transform:uppercase;letter-spacing:2.5px;
+  border-top:1px solid var(--border);
+}
+.label:first-child{border-top:none;}
+
+/* Общий hero base */
+.hero{
+  min-height:88vh;
+  display:grid;
+  align-items:center;
+  padding:24px 56px 60px;
+  position:relative;
+  overflow:hidden;
+  gap:48px;
+}
+.bg-glow{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(ellipse 50% 70% at -5% 50%,rgba(99,102,241,.08) 0%,transparent 60%),
+    radial-gradient(ellipse 30% 50% at 40% 20%,rgba(99,102,241,.04) 0%,transparent 60%);
+  pointer-events:none;
+}
+.bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(99,102,241,.025) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(99,102,241,.025) 1px,transparent 1px);
+  background-size:56px 56px;pointer-events:none;
+}
+.hero-left{position:relative;z-index:2;}
+h1{
+  font-family:var(--font-head);
+  font-size:clamp(34px,3.2vw,48px);
+  font-weight:800;line-height:1.08;
+  letter-spacing:-.03em;margin-bottom:20px;
+}
+h1 .grad{
+  display:block;
+  background:linear-gradient(135deg,#6366f1 0%,#a78bfa 50%,#6366f1 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.sub{font-size:16px;color:var(--text2);line-height:1.7;max-width:500px;margin-bottom:30px;}
+.sub strong{color:rgba(228,232,245,.55);font-weight:500;}
+.btn-main{
+  display:inline-block;padding:14px 30px;
+  background:var(--accent);color:#fff;
+  border-radius:10px;font-size:15px;font-weight:600;
+  text-decoration:none;box-shadow:0 6px 28px rgba(99,102,241,.28);
+}
+.btn-note{font-size:12px;color:var(--text3);margin-top:10px;}
+.trust{
+  display:flex;flex-direction:column;gap:9px;
+  margin-top:28px;padding-top:24px;border-top:1px solid var(--border);
+}
+.ti{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--text3);}
+.tc{
+  width:17px;height:17px;border-radius:5px;
+  background:rgba(99,102,241,.1);border:1px solid rgba(99,102,241,.2);
+  display:flex;align-items:center;justify-content:center;
+  font-size:9px;color:var(--accent2);
+}
+
+/* ───── ВАРИАНТ A ───── */
+.hero-a{grid-template-columns:1fr minmax(380px,460px);justify-content:start;gap:80px;}
+.hero-a .hero-right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-a .hero-right::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:120%;height:90%;
+  background:radial-gradient(ellipse,rgba(99,102,241,.12) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-a img{
+  width:100%;height:auto;display:block;
+  border-radius:20px;
+  box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(99,102,241,.1);
+  position:relative;z-index:1;
+}
+.kpi-card{
+  position:absolute;z-index:3;
+  background:rgba(20,22,40,.85);
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(99,102,241,.25);
+  border-radius:12px;
+  padding:14px 18px;
+  box-shadow:0 16px 48px rgba(0,0,0,.5);
+  display:flex;flex-direction:column;gap:4px;
+  min-width:160px;
+}
+.kpi-card .kpi-label{
+  font-size:10px;font-weight:700;color:var(--text3);
+  text-transform:uppercase;letter-spacing:1px;
+}
+.kpi-card .kpi-value{
+  font-family:var(--font-head);
+  font-size:22px;font-weight:800;color:var(--text);
+  letter-spacing:-.02em;
+}
+.kpi-card.green .kpi-value{color:#22c55e;}
+.kpi-card.purple .kpi-value{color:var(--accent2);}
+.kpi-card .kpi-sub{font-size:11px;color:var(--text2);}
+.kpi-a1{top:8%;left:-50px;}
+.kpi-a2{top:48%;right:-40px;}
+.kpi-a3{bottom:8%;left:-30px;}
+
+/* ───── ВАРИАНТ B ───── */
+.hero-b{display:block;padding:0;min-height:88vh;position:relative;}
+.hero-b .photo-bg{
+  position:absolute;top:0;right:0;bottom:0;
+  width:60%;
+  background-image:url('img/hero.png');
+  background-size:cover;
+  background-position:center top;
+}
+.hero-b .gradient-overlay{
+  position:absolute;top:0;right:0;bottom:0;
+  width:60%;
+  background:linear-gradient(90deg,rgba(7,8,15,1) 0%,rgba(7,8,15,.4) 30%,transparent 65%);
+}
+.hero-b .left-fill{
+  position:absolute;top:0;left:0;bottom:0;width:40%;
+  background:linear-gradient(135deg,rgba(99,102,241,.06),transparent 60%);
+}
+.hero-b .hero-left{
+  position:relative;z-index:2;
+  padding:120px 56px;
+  max-width:680px;
+}
+
+/* ───── ВАРИАНТ C ───── */
+.hero-c{grid-template-columns:1fr 400px;justify-content:start;gap:80px;}
+.hero-c .hero-right{position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.hero-c .hero-right::before{
+  content:'';position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%);width:110%;height:110%;
+  background:radial-gradient(ellipse,rgba(99,102,241,.07) 0%,transparent 65%);
+  pointer-events:none;
+}
+.hero-c .frame{
+  position:relative;width:100%;
+  padding:14px;
+  background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(99,102,241,.03));
+  border:1px solid rgba(99,102,241,.2);
+  border-radius:22px;
+}
+.hero-c img{
+  width:100%;height:auto;display:block;
+  border-radius:12px;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.hero-c .dots{
+  position:absolute;width:80px;height:80px;z-index:0;
+  background-image:radial-gradient(rgba(129,140,248,.4) 1px,transparent 1px);
+  background-size:10px 10px;
+}
+.hero-c .dots.tl{top:-30px;left:-30px;}
+.hero-c .dots.br{bottom:-30px;right:-30px;}
+.hero-c .accent-line{
+  position:absolute;top:50%;left:-40px;
+  width:60px;height:1px;background:var(--accent);
+  box-shadow:0 0 12px rgba(99,102,241,.8);
+}
+</style>
+</head>
+<body>
+
+<!-- ВАРИАНТ A -->
+<div class="label">Вариант A — Меньше фото + плавающие карточки KPI</div>
+<section class="hero hero-a">
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <div class="hero-left">
+    <h1>
+      Верните себе часы<br>
+      которые уходят<br>
+      <span class="grad">на отчёты из 1С</span>
+    </h1>
+    <p class="sub">
+      Фитнес-директор автоматически выгружает данные из 1С и превращает их в готовую аналитику —
+      <strong>план-факт, конверсия ВПТ, реализация, продления, остатки тренировок.</strong>
+      Всё в одном месте, без ручной сводки в Excel.
+    </p>
+    <a href="#demo" class="btn-main">Записаться на бесплатный аудит и демонстрацию →</a>
+    <div class="btn-note">Покажем где клуб теряет деньги — за 30 минут</div>
+    <div class="trust">
+      <div class="ti"><div class="tc">✓</div>Разработано действующим фитнес-директором</div>
+      <div class="ti"><div class="tc">✓</div>Работает с любым клубом на 1С Фитнес</div>
+      <div class="ti"><div class="tc">✓</div>Настройка и интеграция в течение 2-х недель</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <img src="img/hero.png" alt="">
+    <div class="kpi-card green kpi-a1">
+      <div class="kpi-label">План выполнен</div>
+      <div class="kpi-value">101.3%</div>
+      <div class="kpi-sub">факт: 1 519 368 ₽</div>
+    </div>
+    <div class="kpi-card purple kpi-a2">
+      <div class="kpi-label">Конверсия ВПТ</div>
+      <div class="kpi-value">146%</div>
+      <div class="kpi-sub">в пакет: 32 из 22</div>
+    </div>
+    <div class="kpi-card kpi-a3">
+      <div class="kpi-label">Удержание</div>
+      <div class="kpi-value">67%</div>
+      <div class="kpi-sub">228 активных клиентов</div>
+    </div>
+  </div>
+</section>
+
+<!-- ВАРИАНТ B -->
+<div class="label">Вариант B — Фото фоном с градиентом</div>
+<section class="hero hero-b">
+  <div class="left-fill"></div>
+  <div class="photo-bg"></div>
+  <div class="gradient-overlay"></div>
+
+  <div class="hero-left">
+    <h1>
+      Верните себе часы<br>
+      которые уходят<br>
+      <span class="grad">на отчёты из 1С</span>
+    </h1>
+    <p class="sub">
+      Фитнес-директор автоматически выгружает данные из 1С и превращает их в готовую аналитику —
+      <strong>план-факт, конверсия ВПТ, реализация, продления, остатки тренировок.</strong>
+      Всё в одном месте, без ручной сводки в Excel.
+    </p>
+    <a href="#demo" class="btn-main">Записаться на бесплатный аудит и демонстрацию →</a>
+    <div class="btn-note">Покажем где клуб теряет деньги — за 30 минут</div>
+    <div class="trust">
+      <div class="ti"><div class="tc">✓</div>Разработано действующим фитнес-директором</div>
+      <div class="ti"><div class="tc">✓</div>Работает с любым клубом на 1С Фитнес</div>
+      <div class="ti"><div class="tc">✓</div>Настройка и интеграция в течение 2-х недель</div>
+    </div>
+  </div>
+</section>
+
+<!-- ВАРИАНТ C -->
+<div class="label">Вариант C — Портретная карточка с декоративной рамкой</div>
+<section class="hero hero-c">
+  <div class="bg-glow"></div>
+  <div class="bg-grid"></div>
+
+  <div class="hero-left">
+    <h1>
+      Верните себе часы<br>
+      которые уходят<br>
+      <span class="grad">на отчёты из 1С</span>
+    </h1>
+    <p class="sub">
+      Фитнес-директор автоматически выгружает данные из 1С и превращает их в готовую аналитику —
+      <strong>план-факт, конверсия ВПТ, реализация, продления, остатки тренировок.</strong>
+      Всё в одном месте, без ручной сводки в Excel.
+    </p>
+    <a href="#demo" class="btn-main">Записаться на бесплатный аудит и демонстрацию →</a>
+    <div class="btn-note">Покажем где клуб теряет деньги — за 30 минут</div>
+    <div class="trust">
+      <div class="ti"><div class="tc">✓</div>Разработано действующим фитнес-директором</div>
+      <div class="ti"><div class="tc">✓</div>Работает с любым клубом на 1С Фитнес</div>
+      <div class="ti"><div class="tc">✓</div>Настройка и интеграция в течение 2-х недель</div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="dots tl"></div>
+    <div class="dots br"></div>
+    <div class="accent-line"></div>
+    <div class="frame">
+      <img src="img/hero.png" alt="">
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
